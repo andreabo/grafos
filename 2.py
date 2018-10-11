@@ -32,7 +32,6 @@ class Graph(object):
         for n in self.g[n1]:
             if not v[n]:
                 p = path.copy()
-                print(p, n1, n, self.g[n1])
                 p.append(n)
                 sh = self.getPathHelper(n, n2, v, p)
 
@@ -64,7 +63,6 @@ def main():
 
         testCases = []
         for y in range(t):
-            print(y)
             testCases.append(input().split(" "))
 
         for t1 in testCases:
