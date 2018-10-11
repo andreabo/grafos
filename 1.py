@@ -66,6 +66,7 @@ def main():
                 camino = camino + str(c) + (" -> " if c is not n2 else "")
             print("Path: " + camino, "Distance: " + str(res[1]))
 
+main()
 """
 g = Graph(5)
 g.addEdge(0,1,20)
