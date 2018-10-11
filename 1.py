@@ -8,10 +8,10 @@ class Graph(object):
             
     def addEdge(self, n1, n2, w):
         self.g[n1].append((n2, w))
-
+    
 
     def shortestPathHelper(self, n1, n2, visited, totalValue, path):
-        visited[n1] = True
+        visited[n1] = True    
         t = totalValue
         r = []
 
@@ -22,7 +22,7 @@ class Graph(object):
 
         for n in self.g[n1]:
             if not visited[n[0]]:
-                p  = path
+                p  = path.copy()
                 p.append(n[0])
                 sh = self.shortestPathHelper(n[0], n2, visited, totalValue + n[1], p)
 
@@ -65,9 +65,9 @@ def main():
             for c in res[0]:
                 camino = camino + str(c) + (" -> " if c is not n2 else "")
             print("Path: " + camino, "Distance: " + str(res[1]))
-    
-main()
-"""g = Graph(5)
+
+"""
+g = Graph(5)
 g.addEdge(0,1,20)
 g.addEdge(0,2,35)
 g.addEdge(4,2,35)
